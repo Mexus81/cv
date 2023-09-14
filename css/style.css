@@ -1,0 +1,147 @@
+
+* {
+    margin: 0px; /*Allt på hela sidan ska fylla ut åt alla håll*/
+  }
+
+  html
+  {
+    font-size:100%; /*Font-size ska vara 16pt orginal*/
+  }
+
+  body 
+  {
+    background-color:black; /*Hemsidan ska ha svart bakgrundsfärg*/
+    height: 100vh; /*Fyll ut höjden på hela sidan*/
+  }
+
+  header
+  {
+    text-align: center; /*Huvudrubrik centrerad - Andreas Claesson*/
+  }
+
+  h1
+   {
+    font-family: 'Share Tech Mono',Arial, Helvetica, sans-serif; /*Lånar en font från Google API Fonts*, 
+    serif används om något går fel.*/
+    font-size: 3rem; /*3x större än 16pt*/
+    color:#F8CBA6; /*Färg på Rubrik*/
+   }
+
+   h3,h2
+   {
+    font-family: 'Share Tech Mono',Arial, Helvetica, sans-serif; /*Underrubriker i storlek h3,h2 i svart*/
+    color:black;/*Textfärg:svart*/
+   }
+
+  .nav-list /*Menyn*/
+  {
+    background-color: #FFE7CC; /*Meny-Bakgrundsfärg*/
+    margin: 0px; /*Menyn ska "sitta" tätt ihop med det övriga som är i närheten*/
+    padding:30px; /*Skapar mellanrum för allt i menyn, speciellt för menyvalet*/
+    gap:10px; /*Skapar mellanrum mellan menyknapparna*/
+    flex-wrap: wrap; /*Menyvalen ställs på kolumn vid mindre visningsytor*/
+    list-style: none; /*Menyn är gjord av en li. Vill inte ha "prickar" framför*/
+    display:flex; /*Fyller automatiskt upp höjd/bredd på menyn beroende på dator/mobil.
+    Vid för liten display kommer menyn visas på 2 rader istället för en.*/
+    flex-direction:row; /*Visar menyn i rad format*/
+    justify-content: center; /*Menyvalen ska vara centrerade på givet utrymme*/
+  }
+
+  .nav-list li
+  {
+    flex:1;/*Lika stora knappar oavsett antal tecken som val i menyn. Fyller ut dem jämnt.*/
+    border: 2px solid #000000; /*Knapparna har en 2 pixel ram runt sig i färg svart*/
+    background-color: #000000; /*Knapparna har en bakgrundsfärg i svart*/
+  }
+
+  .nav-list li a 
+  {
+    display:block; /*Det enda som fungerar för mina knappar att
+    visa rätt med knapptexten. För ovis inom display för att förstå sammanbandet*/
+    color: #ffffff; /*Textfärgen för menyn i svart bakgrund*/
+    padding: 5px; /*Vill ha lite avstånd med texten från ramen runt knapparna*/
+    text-decoration:none; /*Vill inte ha en underline då det är länkar här*/
+    text-align:center; /*Centrera texten i knapparna*/
+    margin:0px; /*Vill inte ha mer utrymme mellan text och ram*/
+    font-family: 'Share Tech Mono',Arial, Helvetica, sans-serif; /*Lånar en font från Google API Fonts, 
+    serif används om något går fel.*/
+    font-size: 1.6rem; /*1.6x större än orginalstorleken (16pt)*/
+    font-weight: bolder; /*Tjockare text för synlighetens skull*/
+  }
+  .nav-list li a:hover 
+  {
+    background-color: #F8CBA6; /*Knapparna fyller menyknapparna med annan bakgrundsfärg
+    när man för muspekaren över*/
+    color: black; /*Textfärgen ändras från vit till svart vid "hover.*/
+    text-decoration:none; /*Ingen underlinje vid länk.*/
+  }
+
+  .columns /*Detta är huvudelen för information*/
+  {
+    display:flex; /*Fyller automatiskt upp höjd/bredd*/
+    flex-direction: row; /*Vill ha det som rad, inte kolumn*/
+    gap:5px; /*Delar upp mina "cards" synligt om jag vill ha mer information om något
+    som skamskilja sig från huvudinformation*/
+    padding:2%; /*Utrymme från menyraden*/
+  }
+  
+  .columns a:hover
+  {
+    text-decoration: none; /*Textlänkar i huvudfönsret ska inte ha en underlinje vid
+    muspekaren över.*/
+    color:#000000; /*Länk i svart färg*/
+    background-color: transparent; /*ingen ruta ska dyka upp vid klick på länk*/
+  }
+  .columns a:visited,a:link
+  {
+    text-decoration: underline; /*Ska synas att det är en länk och inte text enabart*/
+    color:#000000; /*Länkfärgen är i samma färg som texten. Viktigt att markera med
+    en underlinje att här är det klickbart*/
+    background-color: transparent; /*ingen ruta ska dyka upp vid klick på länk*/
+  }
+  
+  .columns > *
+  {
+    flex:1; /*Innehållet i huvuddelen ska fylla ut hela bredden och höjden den får tilldelad.*/
+  }
+
+  .cards
+  {
+    background-color: #FFFBEB; /*Bakgrundsfärgen för "korten" som finns i huvuddelen.
+    Finns 2 kort max just nu samt minst 1 beroende på vilken sida man är inne på.*/
+    padding:1%; /*Lite avstånd från "kortramen" när text skrivs in i dem*/
+    font-family: 'Share Tech Mono',Arial, Helvetica, sans-serif; /*Lånar en font från Google API Fonts*/
+    font-size: 1rem; /*16pt*/
+  }
+
+  .cards > img 
+  {
+    width:200px; /*alla bilder i huvudelen ska ha samma storlek, oavsett ursprungsstorlek.*/
+    height:200px; /*alla bilder i huvudelen ska ha samma storlek, oavsett ursprungsstorlek.*/
+    -webkit-filter: grayscale(100%); /*Blev lite nyfiken på bilder i gråskala. 
+    Nu kan jag justera alla bilder hur mycket färg det ska vara i dem*/
+    filter: grayscale(60%); /*Här kan jag justera hur mycket färg som ska släppas igenom på bilder.*/
+    margin-right:10px; /*Skapar utrymme från bilderna mot text så inte dem går ihop.*/
+    margin-left:10px; /*Skapar utrymme från bilderna mot text så inte dem går ihop.*/
+    padding:0px; /*Utrymme från övre kort ramen*/
+    border:1px solid black;
+  }
+  
+footer /*Här har jag valt att inte lägga in något ännu. Men det ska finnas en ram ändå
+längst ner på alla sidor.*/
+{
+background-color: #FFE7CC; 
+font-family: 'Share Tech Mono',Arial, Helvetica, sans-serif;
+font-size: 1.6rem;
+font-weight: bolder;
+align-self: center;
+height:20px;
+}
+
+@media all and (max-width: 481px) /*Vid små mobilerfönster ska huvuddelen ändras från rad
+till kolumn för att få med allt vertikalt istället.*/
+  {
+  .columns {
+    flex-direction: column;
+  }
+  }
